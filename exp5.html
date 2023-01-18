@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Change String</h1>
+    <fieldset>
+        <form>
+            Enter a string: 
+            <input type="text" id="string">
+            <input type="submit">
+            <p id="res"></p>
+            <p id="re"></p>
+        </form>
+        <script>
+            document.querySelector('form').onsubmit=function(){
+                const s=document.querySelector("#string").value;
+                a=s.split("");
+                for(i=0;i<a.length;i++){
+                    if(s[i]=="z"){
+                        a[i]="a";
+                    }
+                    else if(s[i]==" "){
+                        a[i]=" ";
+                    }
+                    else{
+                        a[i]=String.fromCharCode(a[i].charCodeAt(0)+1);
+                    }
+                }
+                b=a.join("");
+                document.getElementById('res').innerHTML=b;
+                alert(`${b}`);
+                c=b.split("");
+                for(i=0;i<c.length;i++){
+                    if(b[i]=="a"||b[i]=="e"||b[i]=="i"||b[i]=="o"||b[i]=="u"){
+                        c[i]=b[i].toUpperCase();
+                    }
+                }
+                d=c.join("");
+                document.getElementById('re').innerHTML=d;
+                alert(`${d}`)
+            }
+        </script>
+    </fieldset>
+</body>
+</html>

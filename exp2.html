@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    Enter details of the item purchased
+    <fieldset>
+        <form>
+            Name:
+            <input type="text box" id="name"><br>
+            Price:
+            <input type="number" id="price" min="1"><br>
+            Number of items:
+            <input type="number" id="num" min="1"><br>
+            <input type="button" value="Submit" onclick="myfunc()">
+        </form>
+    </fieldset><br>
+    The total cost:
+    <p id="total"></p>
+    <script>
+        function myfunc(){
+            x=document.querySelector('#price').value;
+            y=document.querySelector('#num').value;
+            document.querySelector('#total').innerHTML=x*y;
+            alert("Thank you for purchasing. Do visit again!")
+        }
+    </script>
+</body>
+</html>

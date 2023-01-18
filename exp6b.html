@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>String</title>
+</head>
+<body>
+    <form>
+    <fieldset>
+        <legend>String</legend>
+        Enter text:
+        <textarea id="mystring" rows="3" cols="50"></textarea><br>
+        Enter the string to be searched:
+        <input type="text" id="s2">
+        <input type="button" value="Submit" onclick="getStr()">
+    </fieldset>
+    <fieldset>
+        <legend>Display</legend>
+        <p id="r1"></p>
+        <p id="r2"></p>
+        <p id="r3"></p>
+        <p id="r4"></p>
+        <p id="r5"></p>
+        <p id="r6"></p>
+        <p id="r7"></p>
+    </fieldset>
+</form>
+<script>
+    function getStr(){
+        pos=0;
+        count=0;
+        acount=0;
+        ncount=0;
+        scount=0;
+        const s1=document.querySelector("#mystring").value;
+        document.querySelector("#r1").innerHTML=s1;
+        const s2=document.querySelector("#s2").value;
+        document.querySelector("#r2").innerHTML=s2;
+        n=s1.length;
+        s3=s1.toLowerCase();
+        for(i=0;i<n;i++){
+            if(s3[i]>="a" && s3[i]<="z"){
+                acount=acount+1;
+            }
+            else if(s3[i]>="0" && s3[i]<="9"){
+                ncount=ncount+1;
+            }
+            else{
+                scount=scount+1;
+            }
+        }
+        document.querySelector("#r3").innerHTML=acount;
+        document.querySelector("#r4").innerHTML=ncount;
+        document.querySelector("#r5").innerHTML=scount;
+        a=s3.split(" ");
+        for(i=0;i<a.length;i++){
+            if(a[i]==s2){
+                count=count+1;
+                pos=i;
+            }
+        }
+        document.querySelector("#r6").innerHTML=count;
+        document.querySelector("#r7").innerHTML=pos;
+    }
+</script>
+</body>
+</html>

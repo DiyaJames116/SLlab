@@ -1,0 +1,47 @@
+q<!DOCTYPE html> 
+<html> 
+    <title>strings</title> <head>
+</head> 
+<body>
+    <p id="ori"></p> 
+        <form>
+            <fieldset>
+                <legend>Input</legend>
+                Enter a string to be added to the start of the array:
+                <input type="text" id="newstr"><br>
+                <input type="button" onclick="myfunc()" value="Submit"> 
+            </fieldset>
+        </form>
+    <p id="newstring"></p> 
+    <p id="xx"></p>
+    <p id="xy"></p> 
+    <script>
+        Original_String = ['this', 'is', 'a', 'list', 'of', 'words'];
+        myLength = [];
+        lenMoreThan3=[];
+        document.getElementById("ori").innerHTML = "The original array is: " + Original_String; 
+        function myfunc() {
+            x = document.getElementById("newstr").value;
+            Original_String.unshift(x); 
+            document.getElementById("newstring").innerHTML = "The array is now: " +
+            Original_String; 
+            myfunc2(Original_String);
+        }
+        function myfunc2(Original_String){ 
+            for(i=0;i<Original_String.length;i++){
+                myLength[i]=Original_String[i].length; 
+            }
+            document.getElementById("xx").innerHTML = "The array is now: " + myLength;
+            myfunc3(Original_String,myLength); 
+        }
+        function myfunc3(Original_String,myLength){ 
+            for(i=0;i<Original_String.length;i++){
+                if (myLength[i]>3){ 
+                    lenMoreThan3.push(Original_String[i]);
+                } 
+            }
+        document.getElementById("xy").innerHTML = "The strings with length > 3: " + lenMoreThan3;
+        }
+    </script>
+</body> 
+</html>

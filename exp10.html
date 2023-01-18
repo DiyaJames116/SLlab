@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <fieldset>
+        <form>
+            1. Cake <input type="button" value="$1.5" id="cake"><br>
+            2. Cupcake <input type="button" value="$1.0" id="cupc"><br>
+            3. Cookie<input type="button" value="$0.6" id="cookie"><br>
+            4. Pastry<input type="button" value="$0.4" id="pastries"><br>
+            5. Chocolate<input type="button" value="$0.2" id="chocolate"><br>
+            6. Puffs<input type="button" value="$0.5" id="puffs"><br>
+            7. Roll<input type="button" value="$0.4" id="roll">
+        </form>
+    </fieldset>
+    <h1>Cart</h1>
+    <fieldset>
+        <ul id="cart">
+        </ul>
+    </fieldset>
+    <h1>Cart Total(in $)</h1>
+    <h1 id="total">0</h1>
+    <script>
+        c=0;
+        price=0;
+        document.querySelector("#cake").onclick=()=>{
+            c++;
+            price=price+1.5;
+            const li=document.createElement('li');
+            li.innerHTML="Cake";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+
+        document.querySelector("#cupc").onclick=()=>{
+            price=price+1.0;
+            const li=document.createElement('li');
+            li.innerHTML="Cupcake";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+
+        document.querySelector("#cookie").onclick=()=>{
+            price=price+0.6;
+            const li=document.createElement('li');
+            li.innerHTML="Cookie";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+
+        document.querySelector("#pastries").onclick=()=>{
+            price=price+0.4;
+            const li=document.createElement('li');
+            li.innerHTML="Pastry";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+
+        document.querySelector("#chocolate").onclick=()=>{
+            price=price+0.2;
+            const li=document.createElement('li');
+            li.innerHTML="Chocolate";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+        
+        document.querySelector("#puffs").onclick=()=>{
+            price=price+0.5;
+            const li=document.createElement('li');
+            li.innerHTML="Puffs";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+        
+        document.querySelector("#roll").onclick=()=>{
+            price=price+0.4;
+            const li=document.createElement('li');
+            li.innerHTML="Roll";
+            document.querySelector("#cart").append(li);
+            document.querySelector("#total").innerHTML=price.toFixed(2);
+        }
+    </script>
+</body>
+</html>
